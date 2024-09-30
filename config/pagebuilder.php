@@ -147,7 +147,7 @@ return [
         'class' => PHPageBuilder\Theme::class,
         'folder' => base_path('themes'),
         'folder_url' => '/themes',
-        'active_theme' => 'demo'
+        'active_theme' => 'blog'
     ],
 
     /*
