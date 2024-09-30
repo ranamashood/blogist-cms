@@ -4,14 +4,14 @@ $menusTabActive = isset($_GET['tab']) && $_GET['tab'] === 'menus' ? 'active' : '
 $settingsTabActive = isset($_GET['tab']) && $_GET['tab'] === 'settings' ? 'active' : '';
 ?>
 <div class="py-5 text-center">
-    <h2><?= phpb_trans('website-manager.title') ?></h2>
+    <h2>Blogs Manager</h2>
 </div>
 
 <div class="row">
     <div class="col-12">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link <?= phpb_e($pagesTabActive) ?>" data-toggle="tab" href="#pages"><?= phpb_trans('website-manager.pages') ?></a>
+                <a class="nav-link <?= phpb_e($pagesTabActive) ?>" data-toggle="tab" href="#pages">Blogs</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?= phpb_e($menusTabActive) ?>" data-toggle="tab" href="#menus"><?= phpb_trans('website-manager.menus') ?></a>
@@ -24,18 +24,18 @@ $settingsTabActive = isset($_GET['tab']) && $_GET['tab'] === 'settings' ? 'activ
         <div class="tab-content">
             <div id="pages" class="tab-pane <?= phpb_e($pagesTabActive) ?>">
 
-                <h4><?= phpb_trans('website-manager.pages') ?></h4>
+                <h4>Blogs</h4>
 
                 <div class="main-spacing">
                     <?php
                     if (phpb_flash('message')):
-                    ?>
+                        ?>
                     <div class="alert alert-<?= phpb_flash('message-type') ?>">
                         <?= phpb_flash('message') ?>
                     </div>
                     <?php
                     endif;
-                    ?>
+?>
 
                     <div class="table-responsive">
                         <table class="table">
@@ -48,8 +48,8 @@ $settingsTabActive = isset($_GET['tab']) && $_GET['tab'] === 'settings' ? 'activ
                             </thead>
                             <tbody>
                             <?php
-                            foreach ($pages as $page):
-                                ?>
+        foreach ($pages as $page):
+            ?>
                                 <tr>
                                     <td>
                                         <?= phpb_e($page->getName()) ?>
@@ -73,8 +73,8 @@ $settingsTabActive = isset($_GET['tab']) && $_GET['tab'] === 'settings' ? 'activ
                                     </td>
                                 </tr>
                             <?php
-                            endforeach;
-                            ?>
+        endforeach;
+?>
                             </tbody>
                         </table>
                     </div>
@@ -82,7 +82,7 @@ $settingsTabActive = isset($_GET['tab']) && $_GET['tab'] === 'settings' ? 'activ
 
                 <hr class="mb-3">
                 <a href="<?= phpb_url('website_manager', ['route' => 'page_settings', 'action' => 'create']) ?>" class="btn btn-primary btn-sm">
-                    <?= phpb_trans('website-manager.add-new-page') ?>
+                    Add new blog
                 </a>
 
             </div>
@@ -97,7 +97,7 @@ $settingsTabActive = isset($_GET['tab']) && $_GET['tab'] === 'settings' ? 'activ
 
                 <?php
                 require __DIR__ . '/settings.php';
-                ?>
+?>
 
             </div>
         </div>
