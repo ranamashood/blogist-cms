@@ -66,7 +66,7 @@ return [
      */
     'website_manager' => [
         'use_website_manager' => true,
-        'class' => PHPageBuilder\Modules\WebsiteManager\WebsiteManager::class,
+        'class' => App\WebsiteManager\WebsiteManager::class,
         'url' => '/admin'
     ],
 
