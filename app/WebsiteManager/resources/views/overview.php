@@ -1,7 +1,5 @@
 <?php
 $pagesTabActive = ! isset($_GET['tab']) || $_GET['tab'] === 'pages' ? 'active' : '';
-$menusTabActive = isset($_GET['tab']) && $_GET['tab'] === 'menus' ? 'active' : '';
-$settingsTabActive = isset($_GET['tab']) && $_GET['tab'] === 'settings' ? 'active' : '';
 ?>
 <div class="py-5 text-center">
     <h2>Blogs Manager</h2>
@@ -9,18 +7,6 @@ $settingsTabActive = isset($_GET['tab']) && $_GET['tab'] === 'settings' ? 'activ
 
 <div class="row">
     <div class="col-12">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link <?= phpb_e($pagesTabActive) ?>" data-toggle="tab" href="#pages">Blogs</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link <?= phpb_e($menusTabActive) ?>" data-toggle="tab" href="#menus"><?= phpb_trans('website-manager.menus') ?></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link <?= phpb_e($settingsTabActive) ?>" data-toggle="tab" href="#settings"><?= phpb_trans('website-manager.settings') ?></a>
-            </li>
-        </ul>
-
         <div class="tab-content">
             <div id="pages" class="tab-pane <?= phpb_e($pagesTabActive) ?>">
 
@@ -84,20 +70,6 @@ $settingsTabActive = isset($_GET['tab']) && $_GET['tab'] === 'settings' ? 'activ
                 <a href="<?= phpb_url('website_manager', ['route' => 'page_settings', 'action' => 'create']) ?>" class="btn btn-primary btn-sm">
                     Add new blog
                 </a>
-
-            </div>
-            <div id="menus" class="tab-pane <?= phpb_e($menusTabActive) ?>">
-
-                <h4 class="mb-3"><?= phpb_trans('website-manager.menus') ?></h4>
-
-            </div>
-            <div id="settings" class="tab-pane <?= phpb_e($settingsTabActive) ?>">
-
-                <h4 class="mb-3"><?= phpb_trans('website-manager.settings') ?></h4>
-
-                <?php
-                require __DIR__ . '/settings.php';
-?>
 
             </div>
         </div>
