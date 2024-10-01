@@ -8,7 +8,7 @@
     <title><?= $page->getName() ?> | Blogist</title>
     <link rel="stylesheet" href="<?= phpb_theme_asset('css/style.css') ?>" />
 </head>
-<body class="mx-auto" style="width: 1000px; max-width: 65%">
+<body class="py-3 mx-auto" style="width: 1000px; max-width: 65%">
 
 [block slug="blog-title"]
 
