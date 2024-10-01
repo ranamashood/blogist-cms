@@ -21,7 +21,7 @@ $pageTranslations = $page ? $page->getTranslations() : [];
                     if ($action === 'create'):
                         echo "Add new blog";
                     else:
-                        echo phpb_trans('website-manager.edit-page');
+                        echo "Edit blog";
                     endif;
 ?>
                 </h4>

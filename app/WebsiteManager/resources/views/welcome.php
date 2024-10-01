@@ -1,10 +1,11 @@
 <div id="welcome-page">
+    <h1 class="text-center">Blogs</h1>
 
-    <h1 class="text-center">Welcome to PHPageBuilder</h1>
-
-    <div class="text-center intro-links">
-        <a href="<?= phpb_url('website_manager') ?>">Get started</a>
-        <a href="https://github.com/HansSchouten/PHPageBuilder"><i class="fab fa-github"></i> Visit GitHub</a>
-    </div>
-
+    <ul class="list-group">
+    <?php foreach ($pages as $page): ?>
+        <a href="<?= phpb_full_url($page->getRoute()) ?>" class="list-group-item list-group-item-action">
+            <?= phpb_e($page->getName()) ?>
+        </a>
+    <?php endforeach ?>
+    </ul>
 </div>

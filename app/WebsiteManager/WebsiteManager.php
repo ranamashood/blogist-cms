@@ -180,6 +180,9 @@ class WebsiteManager implements WebsiteManagerContract
      */
     public function renderWelcomePage()
     {
+        $pageRepository = new PageRepository();
+        $pages = $pageRepository->getAll();
+
         $viewFile = 'welcome';
         require __DIR__ . '/resources/layouts/empty.php';
     }
