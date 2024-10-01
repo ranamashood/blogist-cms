@@ -14,6 +14,11 @@
 <body class="bg-light">
 
 <div class="container">
+    <a href="<?= phpb_url('website_manager') ?>" class="btn btn-light clear btn-sm mt-1 float-right">
+        <i class="fas fa-sign-in-alt"></i>
+        Admin panel
+    </a>
+
     <?php
     require __DIR__ . '/../views/' . $viewFile . '.php';
     ?>
